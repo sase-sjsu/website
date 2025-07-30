@@ -1,103 +1,96 @@
-import Image from "next/image";
+"use client"
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import "./styles/fadeincarousel.css"
 
-export default function Home() {
+// images for header carousel
+const images = [
+  "/home/1_home_header_img.jpg", "/home/2_home_header_img.jpg", "/home/3_home_header_img.jpg", "/home/4_home_header_img.jpg", "/home/5_home_header_img.jpg"
+];
+
+export default function HomePage() {
+  
+  //fade-in carousel functionality
+  const [currentImage, setCurrentImage] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (ref.current) {
+        ref.current.classList.remove('fade-in');
+        ref.current.classList.add('fade-out');
+
+        setTimeout(() => {
+          setCurrentImage((prev) => (prev + 1) % images.length);
+
+          ref.current?.classList.remove('fade-out');
+          void ref.current?.offsetWidth;
+          ref.current?.classList.add('fade-in');
+
+        }, 1500);
+      }
+    }, 7000);
+  
+    return () => clearInterval(interval);
+      
+    }, []);
+
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <header>
+        {/* Page Title */}
+        <div className="w-full h-150 absolute z-3 flex gap-11">
+          <img className="z-6 h-45 mt-45 ml-auto" src="/sase_logo.png"></img>
+          <h1 className="z-6 w-fit my-auto ml-0! mr-auto leading-tight flex flex-col ">
+            <span className="text-white">society of</span>
+            <span className="w-fit text-gradient">asian</span>
+            <span className="text-white">scientists <span className="text-gradient">&</span> engineers</span>
+            <span className="ml-auto text-white">at <span className="text-gradient ml-auto">sjsu</span></span>
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        
+        {/* Header Background Image */}
+        <div className="h-150 w-full z-2 absolute bg-[linear-gradient(180deg,rgba(15,108,182,0)26%,rgba(0,89,160,0.722)100%),linear-gradient(rgba(0,0,0,0.7)0%,rgba(0,0,0,0.7)100%)]"></div>
+        <div className="h-150 w-full z-0 absolute bg-black"></div>
+        <div className="fade-in h-150 w-full" id="carousel" ref={ref} 
+          style={{
+          backgroundImage: `url(${images[currentImage]})`, 
+          backgroundSize: "cover",
+          backgroundPosition: currentImage == 0? "bottom" : "center", 
+          }}>
+        </div>
+      </header>
+
+      {/* What is SASE section */}
+      <section className="flex flex-col gap-22 items-center mx-55 w-fit">
+        <div className="flex justify-center gap-12"> 
+          <h3 className="basis-xs text-right"> what is SASE? </h3>
+          <div className="blue-blur mt-5 -mx-37"></div>
+          <p className="leading-relaxed basis-7xl"> SASE is a nationwide organization run by a hard-working board of people of  various ethnicities and backgrounds. Ten Proctor and Gamble interns  founded SASE in 2007; these interns were the first members of SASE!  Between 2007 and 2008, they made SASE into a 501(c)3 organization and  began to give back to their community. Throughout the years, SASE  collegiate chapters were created and provided for their community and a  place for their community to come together. ​</p>
+        </div>
+
+        <div className="flex justify-center gap-12">
+          <h3 className="basis-xs text-right"> what is SASE <strong> at SJSU? </strong> </h3>
+          <div className="green-blur mt-5 -mx-37"></div>
+          <p className="leading-relaxed basis-7xl"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          <br/><br/>
+          
+          {/* Link to About Us Page */}
+          Click <Link className="text-sase-blue" href="/about-us">here ↗</Link> to learn more about SASE at SJSU!</p>
+        </div>
+      </section>
+
+      {/* Upcoming Events section */}
+      <section>
+        <h2>upcoming events</h2>
+        <p className="w-fit mt-2 mx-auto mb-10"> (Click on a flyer to learn more!) </p>
+        <p className="flex h-80 w-fit items-center mx-auto"> Come back soon for more events!</p>
+        {/* Link to Events Page */}
+        <p className="w-fit mx-auto mt-10">Check out our <Link className="text-sase-blue" href="/events">events calendar ↗</Link> for additional events!</p>
+      </section>
+
+    </>
   );
 }

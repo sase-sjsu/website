@@ -3,6 +3,110 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --gradient: linear-gradient(90deg,rgba(15, 108, 182, 1) 28%, rgba(141, 198, 63, 1) 66%);
+  --button-gradient: conic-gradient(from 270deg at 50% 50%, #0F6CB6 0%, #8DC63F 25%, #0F6CB6 100%);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-albert-sans);
+}
+
+h1 {
+  background-image: var(--gradient);
+  @apply
+  bg-clip-text
+  text-6xl
+  text-transparent
+  font-bold
+  w-fit
+  m-auto
+}
+
+h2 {
+  background-image: var(--gradient);
+  font-size: 2.75rem;
+  @apply
+  bg-clip-text
+  text-transparent
+  font-bold
+  w-fit
+  mx-auto
+}
+
+h3 {
+  font-size: 1.75rem;
+  @apply
+  z-1
+}
+
+p {
+  @apply
+  text-xl
+  z-1
+}
+
+section {
+  @apply
+  mt-44
+}
+
+.header-image {
+  @apply
+  h-75 
+  w-full
+  bg-center
+  bg-cover
+  bg-black
+  mb-25
+}
+
+.blue-blur {
+  background-color: rgba(15, 108, 182, 0.6);
+  filter: blur(100px);
+  border-radius: 50%;
+  @apply
+  min-h-7.5 max-h-7.5
+  min-w-62.5 max-w-62.5
+}
+
+.green-blur {
+  background-color: rgba(141, 198, 63, 0.8);
+  filter: blur(100px);
+  border-radius: 50%;
+  @apply
+  min-h-7.5 max-h-7.5
+  min-w-62.5 max-w-62.5
+}
+
+.button {
+  background: var(--button-gradient);
+  @apply
+  text-white
+  font-bold
+  px-3
+  py-1.5
+  rounded-md
+}
+
+.button:hover {
+  @apply
+  drop-shadow-md
+  drop-shadow-gray-400
+}
+
+.text-gradient {
+  background-image: var(--gradient);
+  @apply
+  bg-clip-text
+  text-transparent
+}
+
+@theme {
+  --color-sase-blue: #0F6CB6;
+  --color-sase-green: #8DC63F;
+  --color-yeh: 
 }
 
 @theme inline {
@@ -17,10 +121,4 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
