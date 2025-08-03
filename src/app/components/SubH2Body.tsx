@@ -10,7 +10,7 @@ type pageProps = {
     body: string;
 }
 
-export default function SubHeaderBody({title, body}:pageProps) {
+export default function SubH2Body({title, body}:pageProps) {
 
     return (
         <div className="flex flex-col mx-100 mb-5 mt-5 text-center">
