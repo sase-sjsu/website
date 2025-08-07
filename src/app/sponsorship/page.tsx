@@ -17,17 +17,24 @@ export default function SponsorshipPage() {
         />
       </header>
 
-      {/* CTA Buttons */}
       <section className="text-center my-12">
-        <div className="mt-6 flex justify-center gap-6">
-          <a href="/donate" className="button w-56 sm:w-44 text-center">
-            Donate
-          </a>
-          <a href="/contact" className="button w-36 sm:w-44 text-center">
-            Contact Us
-          </a>
-        </div>
-      </section>
+  <div className="mt-6 flex justify-center gap-6 flex-wrap">
+    <a
+      href="/donate"
+      className="button text-xl px-8 py-4 w-44 sm:w-60 text-center"
+    >
+      Donate
+    </a>
+    <a
+      href="/contact"
+      className="button text-xl px-8 py-4 w-44 sm:w-60 text-center"
+    >
+      Contact Us
+    </a>
+  </div>
+</section>
+
+
 
       {/* PDF Preview Left, Text Right */}
       <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-24 my-12 gap-8">
