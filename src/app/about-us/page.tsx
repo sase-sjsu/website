@@ -1,13 +1,19 @@
-"use client";
-
 import SubH2Body from "../components/SubH2Body";
 import SubH3Body from "../components/SubH3Body";
 import BackgroundImage from "../components/BackgroundImage";
-import ImageBioRow from "../components/ImageBioRow";
-import ImageBioCol from "../components/ImageBioCol";
-import DropdownText from "../components/AccordionText";
+import ClickThroughCarousel from "../components/ClickThroughCarousel";
 
 export default function AboutPage() {
+
+  const images = [
+    "/about_us/president_img.jpg",
+    "/about_us/president_img.jpg",
+    "/about_us/president_img.jpg",
+    "/about_us/president_img.jpg",
+    "/about_us/president_img.jpg"
+  ]
+
+
   return (
     <>
     {/* About Us Page Header */}
@@ -48,7 +54,11 @@ export default function AboutPage() {
           title="Our Mission"
           body="SASE is dedicated to the advancement of Asian heritage scientists and  engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE  also encourages members to contribute to the enhancement of the  communities in which they live."
         />
-          
+        <div className="flex flex-col mx-100 mb-5 text-center">
+          <p>Click <a className="text-sase-blue" href="https://www.saseconnect.org/" target="_blank" rel="noopener noreferrer">here ↗</a> to learn more about SASE!</p>
+        </div>
+
+        
       </section>
 
       {/*SASE Values section*/}
@@ -72,85 +82,77 @@ export default function AboutPage() {
         />
       </section>
 
-      {/* Testimonials section 
-      @TODO add a blur bg to these
-      this is a placeholder for the ClickThroughCarousel component
-      component for a clickable testimonials carousel is in progress...*/}
+      {/* Testimonials section*/}
       <section>
         <div className="flex flex-col mx-45 mb-5 mt-10">
           <h2 className="h-50">Testimonials</h2>
-          <div className="flex flex-row mx-50">
-            <p className="text-lg text-left w-120 mx-auto my-4 p-4 bg-transparent rounded-lg">
+          <div className="flex flex-row">
+            <p>
             “Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do ”
             </p>
-            <ImageBioCol
-              image="/about_us/president_img.jpg"
-              name="Alan To"
-              position="SJSU SASE President"
-              profession="himself"
-            /> 
+
           </div>
           
         </div>
       </section>
 
-      {/*executive board 
-      i think this would be better as a carousel too imo -jacob*/}
+      {/*executive board */}
       <section>
-
-        
-
         <div className="flex flex-col mx-45 mb-5 mt-10">
           <h2 className="h-50">Executive Board</h2>
           <div className="flex flex-row">
-              <ImageBioRow
-                image="/about_us/president_img.jpg"
-                name="Alan To"
-                position="SJSU SASE President"
-                quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
+            <div className="flex flex-row gap-10 items-center h-1">
+              <img className="z-6 h-45 mt-45" src="/about_us/president_img.jpg"/>
+                <div className="flex flex-col gap-2 mt-45">
+                  <p><b>Alan To</b></p>
+                  <p>SJSU SASE President</p>
+                  <p>25-26</p>
+                </div>
+            </div>
 
-              <ImageBioRow
-                image="/about_us/president_img.jpg"
-                name="Alan To"
-                position="SJSU SASE President"
-                quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
+            <div className="flex flex-row gap-10 items-center h-1">
+              <img className="z-6 h-45 mt-45" src="/about_us/president_img.jpg"/>
+                <div className="flex flex-col gap-2 mt-45">
+                  <p><b>Alan To</b></p>
+                  <p>SJSU SASE President</p>
+                  <p>25-26</p>
+                </div>
+            </div>
           </div>
-          <div className="flex flex-row">
-              <ImageBioRow
-                image="/about_us/president_img.jpg"
-                name="Alan To"
-                position="SJSU SASE President"
-                quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-
-              <ImageBioRow
-                image="/about_us/president_img.jpg"
-                name="Alan To"
-                position="SJSU SASE President"
-                quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-          </div>
+          
         </div>
       </section>
 
       {/*FAQ*/}
       <section>
-       <DropdownText
-          question="What is SASE?"
-          answer="SASE is dedicated to the advancement of Asian heritage scientists and engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE also encourages members to contribute to the enhancement of the communities in which they live."
-        />
-
-        <DropdownText
-          question="How can I join SASE?"
-          answer="You can join SASE by attending our general meetings, signing up on our website, or reaching out to us via email or social media."
-        />
-
-        <DropdownText
-          question="What events does SASE host?"
-          answer="SASE hosts a variety of events including workshops, networking events, and community service opportunities. Check our events page for more details."
-        />
+        <div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div className="border-4">
+          <button>
+            <h3>Question</h3>
+          </button>
+        </div>
+        <div className="border-4">
+          <button>
+            <h3>Question</h3>
+          </button>
+        </div>
+        <div className="border-4">
+          <button>
+            <h3>Question</h3>
+          </button>
+        </div>
+        <div className="border-4">
+          <button>
+            <h3>Question</h3>
+          </button>
+        </div>
+        <div className="border-4">
+          <button>
+            <h3>Question</h3>
+          </button>
+        </div>
       </section>
 
 
