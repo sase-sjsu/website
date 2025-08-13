@@ -3,8 +3,6 @@
  *                  <p>...
  */
 
-"use clinet";
-
 type pageProps = {
     title: string;
     body: string;

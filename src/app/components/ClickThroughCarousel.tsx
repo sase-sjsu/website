@@ -1,33 +1,64 @@
 "use client";
 
 import { useState } from "react";
+import styles from "../styles/clickthroughcarousel.module.css";
 
-type imagesProp = {
+type pageProps = {
   height: string,
   width: string,
   images: string[]
 };
 
-export default function ClickThroughCarousel({height, width, images}: imagesProp) {
+export default function ClickThroughCarousel({height, width, images}: pageProps) {
     const [currentImage, setCurrentImage] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
     
     const handleNext = () => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+            setIsTransitioning(false);
+        }, 250);
     };
     
     const handlePrev = () => {
-        setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+            setIsTransitioning(false);
+        }, 250);
     };
     
     return (
-        <div className="relative" style={{height: `${height}px`, width: `${width}px`}}>
-            <img src={images[currentImage]} alt={`Image ${currentImage + 1}`} className="w-full h-full object-cover" />
-            <button onClick={handlePrev} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2">Prev</button>
-            <button onClick={handleNext} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2">Next</button>
+        <div 
+            className={styles.carousel} 
+            style={{height: `${height}px`, width: `${width}px`}}
+        >
+            <div className={styles.imageContainer}>
+                <img 
+                    src={images[currentImage]} 
+                    alt={`Image ${currentImage + 1}`} 
+                    className={`${styles.image} ${isTransitioning ? styles.slideLeft : ''}`}
+                />
+            </div>
+            
+            <button 
+                onClick={handlePrev} 
+                className={`${styles.navButton} ${styles.prevButton}`}
+                disabled={isTransitioning}
+            >
+                <div className={`${styles.arrow} ${styles.arrowLeft}`}></div>
+            </button>
+            
+            <button 
+                onClick={handleNext} 
+                className={`${styles.navButton} ${styles.nextButton}`}
+                disabled={isTransitioning}
+            >
+                <div className={`${styles.arrow} ${styles.arrowRight}`}></div>
+            </button>
         </div>
-        
     );
-
-
-
 }
