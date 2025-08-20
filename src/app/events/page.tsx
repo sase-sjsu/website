@@ -45,7 +45,8 @@ export default function EventsPage() {
         </div>
       </section>
       <section>
-        <h2>Past Events</h2>
+        <h2>Recent Events</h2>
+        <p className="text-center pt-10">Coming soon!</p>
       </section>
       <section className="px-20">
         <iframe
