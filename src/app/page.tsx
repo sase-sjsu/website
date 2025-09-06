@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import "./styles/fadeincarousel.css"
+import HomeEventsDisplay from "./components/HomeEventsDisplay";
 
 // images for header carousel
 const images = [
@@ -41,9 +42,9 @@ export default function HomePage() {
 
       <header>
         {/* Page Title */}
-        <div className="w-full h-150 absolute z-3 flex gap-11">
-          <img className="z-6 h-45 mt-45 ml-auto" src="/sase_logo.png"></img>
-          <h1 className="z-6 w-fit my-auto ml-0! mr-auto leading-tight flex flex-col ">
+        <div className="w-fit h-150 mx-auto z-3 flex gap-11">
+          <img className="z-6 h-45 mt-45" src="/sase_logo.png"></img>
+          <h1 className="z-6 w-fit my-auto mr-auto leading-tight flex flex-col ">
             <span className="text-white">society of</span>
             <span className="w-fit text-gradient">asian</span>
             <span className="text-white">scientists <span className="text-gradient">&</span> engineers</span>
@@ -52,9 +53,9 @@ export default function HomePage() {
         </div>
         
         {/* Header Background Image */}
-        <div className="h-150 w-full z-2 absolute bg-[linear-gradient(180deg,rgba(15,108,182,0)26%,rgba(0,89,160,0.722)100%),linear-gradient(rgba(0,0,0,0.7)0%,rgba(0,0,0,0.7)100%)]"></div>
-        <div className="h-150 w-full z-0 absolute bg-black"></div>
-        <div className="fade-in h-150 w-full" id="carousel" ref={ref} 
+        <div className="h-150 w-full z-2 top-12 absolute bg-[linear-gradient(180deg,rgba(15,108,182,0)26%,rgba(0,89,160,0.722)100%),linear-gradient(rgba(0,0,0,0.7)0%,rgba(0,0,0,0.7)100%)]"></div>
+        <div className="h-150 w-full z-0 top-12 absolute bg-black"></div>
+        <div className="fade-in absolute top-12 h-150 w-full" id="carousel" ref={ref} 
           style={{
           backgroundImage: `url(${images[currentImage]})`, 
           backgroundSize: "cover",
@@ -85,10 +86,17 @@ export default function HomePage() {
       {/* Upcoming Events section */}
       <section>
         <h2>upcoming events</h2>
-        <p className="w-fit mt-2 mx-auto mb-10"> (Click on a flyer to learn more!) </p>
-        <p className="flex h-80 w-fit items-center mx-auto"> Come back soon for more events!</p>
+        {/* <p className="w-fit mt-2 mx-auto"> (Click on a flyer to learn more!) </p> */}
+
+        <div className="flex gap-30 my-20 justify-center">
+          <HomeEventsDisplay flyerURL={"/home/events/event1.png"} eventName={"7th Street Tabling"} eventDate={"September 8th-9th"}/>
+          <HomeEventsDisplay flyerURL={"/home/events/event2.png"} eventName={"Lockheed Martin Insights"} eventDate={"September 11th"}/>
+          <HomeEventsDisplay flyerURL={"/home/events/event3.png"} eventName={"1st General Meeting"} eventDate={"September 12th"}/>
+        </div>
+
+        {/* <p className="flex h-80 w-fit items-center mx-auto"> Come back soon for more events!</p> */}
         {/* Link to Events Page */}
-        <p className="w-fit mx-auto mt-10">Check out our <Link className="text-sase-blue" href="/events">events calendar ↗</Link> for additional events!</p>
+        <p className="w-fit mx-auto">Check out our <Link className="text-sase-blue" href="/events">events calendar ↗</Link> for additional events!</p>
       </section>
       
 
