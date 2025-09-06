@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import "./styles/fadeincarousel.css"
-import HomeEventsDisplay from "./components/HomeEventsDisplay";
+import HomeEventsPrograms from "./components/HomeEventsPrograms";
 
 // images for header carousel
 const images = [
@@ -89,9 +89,9 @@ export default function HomePage() {
         {/* <p className="w-fit mt-2 mx-auto"> (Click on a flyer to learn more!) </p> */}
 
         <div className="flex gap-30 my-20 justify-center">
-          <HomeEventsDisplay flyerURL={"/home/events/event1.png"} eventName={"7th Street Tabling"} eventDate={"September 8th-9th"}/>
-          <HomeEventsDisplay flyerURL={"/home/events/event2.png"} eventName={"Lockheed Martin Insights"} eventDate={"September 11th"}/>
-          <HomeEventsDisplay flyerURL={"/home/events/event3.png"} eventName={"1st General Meeting"} eventDate={"September 12th"}/>
+          <HomeEventsPrograms flyerURL={"/home/events/event1.png"} eventName={"7th Street Tabling"} eventDate={"September 8th-9th"}/>
+          <HomeEventsPrograms flyerURL={"/home/events/event2.png"} eventName={"Lockheed Martin Insights"} eventDate={"September 11th"}/>
+          <HomeEventsPrograms flyerURL={"/home/events/event3.png"} eventName={"1st General Meeting"} eventDate={"September 12th"}/>
         </div>
 
         {/* <p className="flex h-80 w-fit items-center mx-auto"> Come back soon for more events!</p> */}
@@ -103,6 +103,12 @@ export default function HomePage() {
       {/* Our Programs section */}
       <section>
         <h2>our programs</h2>
+
+        <div className="flex gap-30 my-20 justify-center">
+          <HomeEventsPrograms flyerURL={"/home/programs/kickstarter.png"} eventName={"Kickstarter"} eventDate={"Collaborate with an industry professional to build and showcase a group project!"}/>
+          <HomeEventsPrograms flyerURL={"/home/programs/mentorship.png"} eventName={"Mentorship"} eventDate={"Our official Big/Little program. Volunteer as a mentor, or pair up as a mentee, and join our social events!"}/>
+          <HomeEventsPrograms flyerURL={"/home/programs/internship.png"} eventName={"Internship"} eventDate={"Interested in running for a board position? Experience it yourself with our SASE Intern program!"}/>        
+        </div>
       </section>
 
     </>
