@@ -90,6 +90,12 @@ export default function HomePage() {
         {/* Link to Events Page */}
         <p className="w-fit mx-auto mt-10">Check out our <Link className="text-sase-blue" href="/events">events calendar ↗</Link> for additional events!</p>
       </section>
+      
+
+      {/* Our Programs section */}
+      <section>
+        <h2>our programs</h2>
+      </section>
 
     </>
   );
