@@ -62,8 +62,8 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <nav className="h-12 z-10 text-lg sticky top-0 bg-white w-full px-4 flex flex-row">
           <Link href="/" className="hover:drop-shadow-xs hover:drop-shadow-gray-400 h-8/12 w-6 my-auto bg-[url(/sase_logo.png)] bg-contain"></Link>
           <ul className="my-auto ml-auto gap-5 flex flex-row">
-            <li><CheckCurrentPath route="/about-us" title="About Us"/></li>
-            {/* <li><CheckCurrentPath route="/events" title="Events"/></li>
+            {/* <li><CheckCurrentPath route="/about-us" title="About Us"/></li>
+            <li><CheckCurrentPath route="/events" title="Events"/></li>
             <li><CheckCurrentPath route="/programs" title="Programs"/></li>
             <li><CheckCurrentPath route="/sponsorship" title="Sponsorship"/></li> */}
             <li> <a className="button" href="https://forms.gle/qvTNLpruWiycUp6L9">Sign Up</a></li>
