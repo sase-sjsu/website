@@ -3,6 +3,7 @@ import { Albert_Sans } from 'next/font/google';
 import Link from "next/link"
 import "./globals.css";
 import CheckCurrentPath from "./components/CheckCurrentPath";
+import Footer from "./components/Footer";
 
 const albert_sans = Albert_Sans({
   subsets: ['latin'],
@@ -65,29 +66,14 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
             <li><CheckCurrentPath route="/events" title="Events"/></li>
             <li><CheckCurrentPath route="/programs" title="Programs"/></li>
             <li><CheckCurrentPath route="/sponsorship" title="Sponsorship"/></li>
-            <li> <a className="button" href="">Sign Up</a></li>
+            <li> <a className="button" href="https://forms.gle/qvTNLpruWiycUp6L9">Sign Up</a></li>
           </ul>
         </nav>
         
         {children}
 
         {/* Footer */}
-        <footer className="flex border-t-1 mt-100 text-gray-400 border-gray-400 px-5 h-17 items-center justify-center">
-          <div className="mr-auto w-50 ">
-            <img className="w-auto mb-1.5 h-6" src="/footer_sase_logo.png"></img>
-            <img className="w-auto h-5" src="/footer_sjsu_logo.png"></img>
-          </div>
-
-          <text className="text-center text-md w-fit">
-            San Jose State University​, 1 Washington Sq, San Jose, CA 
-            <br/>SASE at SJSU © 2025
-          </text>
-
-          <text className="text-right ml-auto w-50">
-            made with 💙💚
-            <br/> SASE SJSU webdev team
-          </text>
-        </footer>
+        <Footer/>
 
       </body>
     </html>

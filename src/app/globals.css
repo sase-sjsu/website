@@ -47,13 +47,14 @@ h3 {
   @apply z-1;
 }
 
-p {
-  @apply text-xl
-  z-1;
+a, p {
+  line-height: 2.4rem;
+  font-size: 1.25rem;
+  z-index: 1;
 }
 
 section {
-  @apply mt-44;
+  margin-top: 11rem
 }
 
 .header-image {
@@ -69,8 +70,8 @@ section {
   background-color: rgba(15, 108, 182, 0.6);
   filter: blur(100px);
   border-radius: 50%;
-  @apply min-h-7.5 max-h-7.5
-  min-w-62.5 max-w-62.5;
+  /* @apply min-h-7.5 max-h-7.5
+  min-w-62.5 max-w-62.5; */
 }
 
 .green-blur {
@@ -120,3 +121,19 @@ section {
     --foreground: #ededed;
   }
 } */
+
+@media (width <= 640px) {
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  section {
+    margin-top: 7rem;
+  }
+  
+  a,p {
+    font-size: 1rem;
+    line-height: 1.7rem;
+
+  }
+}

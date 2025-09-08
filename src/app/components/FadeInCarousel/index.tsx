@@ -3,15 +3,15 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react";
-import "../styles/fadeincarousel.css"
+import "./FadeInCarousel.css"
+import styles from "./FadeInCarousel.module.css"
 
 type imagesProp = {
-  height: string,
-  width: string,
   images: string[]
 };
 
-export default function FadeInCarousel({height, width, images}:imagesProp) {
+export default function FadeInCarousel({images}:imagesProp) {
+  
   const [currentImage, setCurrentImage] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   
@@ -31,14 +31,18 @@ export default function FadeInCarousel({height, width, images}:imagesProp) {
         }, 1500);
       }
     }, 7000);
-
+  
     return () => clearInterval(interval);
-    
+      
   }, []);
 
   return (
-    <>
-      <div className="fade-in" id="carousel" ref={ref} style={{height: `${height}px`, width: `${width}px`, background: `url(${images[currentImage]}) cover center`}}></div>
-    </>
+    <div className={`fade-in ${styles.carouselContainer}`} id="carousel" ref={ref} 
+      style={{
+      backgroundImage: `url(${images[currentImage]})`, 
+      backgroundSize: "cover",
+      backgroundPosition: currentImage == 0? "bottom" : "center", 
+      }}>
+    </div>
   )
 }
