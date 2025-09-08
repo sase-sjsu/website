@@ -106,7 +106,7 @@ export default function HomePage() {
       {/* Let's connect section */}
       <section>
 
-        <h2>let's connect</h2>
+        <h2>let&apos;s connect</h2>
 
         <div className={styles.socialsContainer}>
           
