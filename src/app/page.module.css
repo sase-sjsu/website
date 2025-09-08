@@ -80,7 +80,9 @@
 }
 
 .blueBlur {
-  margin: 1.25rem -9.25rem 0 -9.25rem;
+  width: 15.6rem;
+  height: 1.9rem;
+  margin: 1.25rem -17rem 0 -15rem;
 }
 
 .eventsContainer, .programsContainer, .socialsContainer {
@@ -117,19 +119,46 @@
 
 }
 
+@media (width <= 1150px) {
+
+  .aboutSASEOrg {
+    width: 50rem;
+    flex-direction: row;
+    text-align: left;
+
+    .question {
+      width: 8rem;
+    }
+  }
+
+}
+
 @media (width <= 1024px) {
   
   .aboutSASEOrg {
-    width: 35rem;
-    flex-direction: row;
+    width: 33rem;
     text-align: left;
+
+    .question {
+      text-align: right;
+      width: fit-content;
+    }
+  }
+
+  .blueBlur {
+      margin: 1.25rem -13rem 0 -11rem;
   }
 
   .headerContainer {
     flex-direction: row;
-    width: 35rem;
+    width: 32rem;
   }
 
+  .headerTitle {
+    width: 21rem;
+    margin-right: 0;
+  }
+  
   .headerAtSJSU {
     margin-right: auto;
     margin-left: 0;
@@ -161,6 +190,7 @@
 
   .headerTitle {
     font-size: 1.3rem;
+    width: auto;
     margin: unset;
 
     * {
@@ -206,6 +236,7 @@
     .question {
       font-size: 1.6rem;
       width: 100%;
+      text-align: center;
     }
 
     .description {

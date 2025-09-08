@@ -1,0 +1,124 @@
+.footerContainer {
+  display: flex;
+  background-color: white;
+
+  border-color: var(--color-gray-400);
+  border-top-width: 0.1rem;
+
+  margin-top: 25rem;
+  color: var(--color-gray-400);
+  padding: 0 1.25rem 0 1.25rem;
+  height: 5.5rem;
+
+  align-items: center;
+
+  p {
+    line-height: 2rem;
+  }
+
+}
+
+.logoContainer {
+
+  margin-right: 5rem;
+  width: 14rem;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 0.4rem;
+
+  > * {
+    width: auto;
+    height: 1.75rem;
+  }
+
+}
+
+.address {
+  text-align: center;
+  margin: auto;
+  width: 36rem;
+}
+
+.creator {
+  text-align: right;
+  width: 15rem;
+  font-size: 1.25rem;
+  visibility: visible;
+}
+
+@media (width <= 1400px) {
+
+  .logoContainer {
+    margin: 0;
+  }
+
+  .address {
+    margin-right: 0;
+    text-align: right;
+  }
+
+  .creator {
+    visibility: collapse;
+  }
+
+}
+
+@media (width <= 775px) {
+
+  .footerContainer {
+    height: 8rem
+  }
+
+  .logoContainer {
+    gap: 1rem
+  }
+
+  .address {
+    width: 19rem;
+  }
+
+}
+
+@media (width <= 640px) {
+
+  .footerContainer {
+    p {
+      line-height: 1.5rem;
+    }
+  }
+
+  .logoContainer {
+    visibility: visible;
+    gap: 0.5rem;
+    width: 11rem;
+    flex-wrap: wrap;
+    display: flex;
+
+    > * {
+      width: auto;
+      height: 1.3rem;
+    }
+  }
+
+  .address {
+    width: 18rem;
+  }
+  
+}
+
+@media (width <= 412px) {
+
+  .footerContainer {
+    height: 7rem
+  }
+
+  .address {
+    width: fit-content;
+    text-align: center;
+  }
+
+  .logoContainer {
+    visibility: collapse;
+  }
+
+}
