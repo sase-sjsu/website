@@ -44,10 +44,9 @@ export default function AboutPage() {
 
       {/* Our mission section*/}
       <section>
-        <SubH2Body
-          title="Our Mission"
-          body="SASE is dedicated to the advancement of Asian heritage scientists and  engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE  also encourages members to contribute to the enhancement of the  communities in which they live."
-        />
+        <SubH2Body title="Our Mission">
+          SASE is dedicated to the advancement of Asian heritage scientists and  engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE  also encourages members to contribute to the enhancement of the  communities in which they live.
+        </SubH2Body>
         <div className="flex flex-col mx-100 text-center">
           <p>Click <a className="text-sase-blue" href="https://www.saseconnect.org/" target="_blank" rel="noopener noreferrer">here ↗</a> to learn more about SASE!</p>
         </div>
