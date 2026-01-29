@@ -44,40 +44,37 @@ export default function AboutPage() {
 
       {/* Our mission section*/}
       <section>
+      
         <SubH2Body title="Our Mission">
-          SASE is dedicated to the advancement of Asian heritage scientists and  engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE  also encourages members to contribute to the enhancement of the  communities in which they live.
+          <a href="https://www.saseconnect.org/">SASE ↗</a> is dedicated to the advancement of Asian heritage scientists and  engineers in education and employment so that they can achieve their full career potential. In addition to professional development, SASE  also encourages members to contribute to the enhancement of the  communities in which they live.
         </SubH2Body>
-        <div className="flex flex-col mx-100 text-center">
-          <p>Click <a className="text-sase-blue" href="https://www.saseconnect.org/" target="_blank" rel="noopener noreferrer">here ↗</a> to learn more about SASE!</p>
+
+        {/*SASE Values section*/}
+        <div className="flex gap-5 flex-col">
+          {/* <div className="blue-blur mt-2 -mx-37"></div> */}
+
+          <SubH3Body title="Community" image="/about_us/pillars-community.jpg">
+            We work to build strong bonds within our own SASE community, providing  opportunities for members to make contributions to each other and help  each other grow as a STEM student and professional.
+          </SubH3Body>
+
+          {/* <div className="green-blur mt-5 -mx-37"></div> */}
+          
+          <SubH3Body title="Diversity" image="/about_us/pillars-diversity.jpg">
+            We celebrate the vast diversity of our members within the SASE community, as well as the diversity on campuses and the workplace.
+          </SubH3Body>
+
+          {/* <div className="blue-blur mt-5 -mx-37"></div> */}
+          
+          <SubH3Body title="Success" image="/about_us/pillars-success.png">
+            We facilitate engagement between students and companies through tours, workshops, and job/internship opportunities!
+          </SubH3Body>
         </div>
 
       </section>
 
-      {/*SASE Values section*/}
-      <section>
-        <div className="blue-blur mt-2 -mx-37"></div>
-        <SubH3Body
-          title="Community"
-          body="We work to build strong bonds within our own SASE community, providing  opportunities for members to make contributions to each other and help  each other grow as a STEM student and professional."
-          image="/about_us/pillars-community.jpg"
-        />
-        <div className="green-blur mt-5 -mx-37"></div>
-        <SubH3Body
-          title="Diversity"
-          body="We celebrate the vast diversity of our members within the SASE community, as well as the diversity on campuses and the workplace."
-          image="/about_us/pillars-diversity.jpg"
-        />
-
-        <div className="blue-blur mt-5 -mx-37"></div>
-        <SubH3Body
-          title="Success"
-          body="We facilitate engagement between students and companies through tours, workshops, and job/internship opportunities!"
-          image="/about_us/pillars-success.png"
-        />
-      </section>
 
       {/* Testimonials section*/}
-      <section>
+      {/* <section>
         <SubH2Body
           title="Testimonials"
           body="Hear what previous members of SASE SJSU think about the club!"
@@ -89,14 +86,11 @@ export default function AboutPage() {
             images={images}
           />
         </div>
-      </section>
+      </section> */}
 
       {/*executive board */}
       <section>
-        <SubH2Body
-          title="Executive Board"
-          body="Meet our dedicated team of leaders who drive SASE SJSU forward!"
-        />
+        <SubH2Body title="Executive Board"></SubH2Body>
         <div className="max-w-7xl mx-auto px-4">
           {/* First Row */}
           <div className="flex flex-row justify-center gap-4 mb-8">
@@ -113,7 +107,7 @@ export default function AboutPage() {
               quote="Supporting our president and working to enhance member engagement through innovative programs."
             />
             <ImageBioRow
-              name="Sarah Lou"
+              name="Sarah Lo"
               image="/about_us/eboard-sarah.jpg"
               position="Secretary '25-'26"
               quote="Keeping our organization organized and ensuring clear communication between all board members."
@@ -185,7 +179,7 @@ export default function AboutPage() {
       </section>
 
       {/*FAQ*/}
-      <section>
+      {/* <section>
        <AccordionText
           question="What is SASE?"
           answer="SASE is a nationwide organization run by a hard-working board of people of various"
@@ -199,7 +193,7 @@ export default function AboutPage() {
             answer="SASE hosts a variety of events including workshops, networking events, and community service activities."
         />
 
-      </section>
+      </section> */}
 
 
     </>

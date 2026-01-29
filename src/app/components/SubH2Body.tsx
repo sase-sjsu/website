@@ -7,17 +7,19 @@ import { ReactNode } from "react";
 
 type pageProps = {
     title: string;
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 export default function SubH2Body({title, children}:pageProps) {
 
     return (
-        <div className="flex flex-col mx-100 mb-5 mt-5 text-center">
-          <h2 className="h-50">{title}</h2>
-          <p className="">
-            {children}
-          </p>
+        <div className="flex flex-col w-4xl mx-auto text-center">
+          <h2 className="lowercase mb-15">{title}</h2>
+          {children && (
+            <p className="mb-25">
+              {children}
+            </p>
+          )}
         </div>
     )
 }
