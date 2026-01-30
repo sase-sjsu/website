@@ -15,29 +15,27 @@ export default function AboutPage() {
 
   return (
     <>
-    {/* About Us Page Header */}
-      <header>
-         <BackgroundImage
-          image = "/about_us/about_us_header_img.jpg"
-          title = "About Us"
-        />
-      </header>
+      {/* Header */}
+      <BackgroundImage
+        image = "/about_us/about_us_header_img.jpg"
+        title = "About Us"
+      />
 
       {/* President Message */}
-      <section className="flex flex-col items-center">
-        <div className="text-left w-4xl mx-auto my-20 p-10 bg-opacity-50 rounded-lg">
-          <p className="text-2xl mb-4">
-          Welcome to SJSU’s Society of Asian Scientists and Engineers (SASE)!<br></br><br></br>
-          We are a fully free to join organization open to all students on campus, regardless of background, offering a wide range of professional development and social opportunities to help you grow, connect, and develop a sense of community on campus!
-          </p>
-        
-          <div className="flex flex-row gap-10 items-center h-1">
-            <img className="z-6 h-45 mt-45" src="/about_us/eboard-alan.jpg"/>
-              <div className="flex flex-col gap-2 mt-45">
-                <p><b>Alan To</b></p>
-                <p>SJSU SASE President</p>
-                <p>25-26</p>
-              </div>
+      <section className="president-quote flex w-4xl m-auto flex-col items-center">
+        <p>
+          "Welcome to SJSU’s Society of Asian Scientists and Engineers (SASE)!
+          <br/>
+          <br/>
+          We are a fully free to join organization open to all students on campus, regardless of background, offering a wide range of professional development and social opportunities to help you grow, connect, and develop a sense of community on campus!"
+        </p>
+      
+        <div className="mt-18 mr-auto flex flex-row gap-10 items-center">
+          <img className="h-55" src="/about_us/eboard-alan.jpg"/>
+          <div className="flex flex-col align-middle">
+            <p><b>Alan To</b></p>
+            <p>SJSU SASE President</p>
+            <p>'25-'26</p>
           </div>
         </div>
       </section>
@@ -51,19 +49,14 @@ export default function AboutPage() {
 
         {/*SASE Values section*/}
         <div className="flex gap-5 flex-col">
-          {/* <div className="blue-blur mt-2 -mx-37"></div> */}
 
           <SubH3Body title="Community" image="/about_us/pillars-community.jpg">
             We work to build strong bonds within our own SASE community, providing  opportunities for members to make contributions to each other and help  each other grow as a STEM student and professional.
           </SubH3Body>
-
-          {/* <div className="green-blur mt-5 -mx-37"></div> */}
           
           <SubH3Body title="Diversity" image="/about_us/pillars-diversity.jpg">
             We celebrate the vast diversity of our members within the SASE community, as well as the diversity on campuses and the workplace.
           </SubH3Body>
-
-          {/* <div className="blue-blur mt-5 -mx-37"></div> */}
           
           <SubH3Body title="Success" image="/about_us/pillars-success.png">
             We facilitate engagement between students and companies through tours, workshops, and job/internship opportunities!
@@ -177,24 +170,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/*FAQ*/}
-      {/* <section>
-       <AccordionText
-          question="What is SASE?"
-          answer="SASE is a nationwide organization run by a hard-working board of people of various"
-        />
-        <AccordionText
-            question="How can I join SASE?"
-            answer="You can join SASE by attending our meetings and signing up on our website."
-        />
-        <AccordionText
-            question="What events does SASE host?"
-            answer="SASE hosts a variety of events including workshops, networking events, and community service activities."
-        />
-
-      </section> */}
-
 
     </>
   );
