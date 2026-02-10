@@ -57,13 +57,16 @@ section {
   margin-top: 11rem
 }
 
-.header-image {
+/* .header-image {
   @apply h-75 
   w-full
   bg-center
   bg-cover
   bg-black
-  mb-25;
+} */
+
+.president-quote p {
+  @apply text-2xl
 }
 
 .blue-blur {

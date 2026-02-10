@@ -2,23 +2,27 @@
  * used for the about me page listing sase mission for community, diversity, culture
  */
 
-"use clinet";
+import { ReactNode } from "react";
+
 
 type pageProps = {
     title: string;
-    body: string;
+    children: ReactNode;
     image: string;
 }
 
-export default function SubH3Body({title, body, image}:pageProps) {
+export default function SubH3Body({title, children, image}:pageProps) {
 
     return (
-        <div className="flex flex-row mx-100 mb-10 mt-50 text-left ">
-          <img className="h-45 mx-10" src={image}/>
-          <div className="flex flex-col">
+        <div className="flex flex-row gap-9 mx-auto mb-10 w-5xl text-left ">
+          <div className="w-80">
+            <img className="ml-auto h-50" src={image}/>
+          </div>
+          {/* <div className="w-80 bg-contain bg-no-repeat" style={{backgroundImage: `url(${image})`}}/> */}
+          <div className="flex flex-col w-7/12 justify-center">
             <h3 className="h-15"><u>{title}</u></h3>
-            <p className="">
-                {body}
+            <p>
+                {children}
             </p>
           </div>
         </div>
