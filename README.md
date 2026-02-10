@@ -40,5 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) to view the site locally.
 
 ## Contributors
 
-- **[@ashley-rr](https://github.com/ashley-rr)** — Project creator and lead developer. Set up the Next.js project and file structure, built the home page (events display, programs section, image carousel), added responsive design with media queries, created the footer, and performed code cleanup and refactoring.
-- **[@Javacadu](https://github.com/Javacadu)** — Built the About Us page content and created reusable components (SubHeadingBody, SubH3Body, BackgroundImage).
+| Project | Description | Tech | My Contributions |
+| --- | --- | --- | --- |
+| [SASE SJSU Website](https://github.com/sase-sjsu/website) | The official SASE SJSU chapter website featuring About Us, Events, Programs, and Sponsorship pages. | TypeScript, Next.js, React, Tailwind CSS | Built the About Us page content and created reusable components (SubHeadingBody, SubH3Body, BackgroundImage) |
